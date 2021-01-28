@@ -1,0 +1,4 @@
+spring.cloud.stream:
+#  function.definition: supplier;receive1;receive2;
+  bindings:
+    orderToBill-in-0.destination: order-to-bill
