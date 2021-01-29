@@ -1,0 +1,24 @@
+version: '2'
+services:
+  spring-cloud-stream-rabbitmq_ecommerce:
+    image: ruudg/ecommerce:latest
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_RABBITMQ_HOST=spring-cloud-stream-rabbitmq_broker
+    ports:
+      - 8080:8080
+  spring-cloud-stream-rabbitmq_billing:
+    image: ruudg/billing:latest
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_RABBITMQ_HOST=spring-cloud-stream-rabbitmq_broker
+  spring-cloud-stream-rabbitmq_broker:
+    image: rabbitmq:management
+    ports:
+      - 5672:5672
+      - 15672:15672
+      - 61613:61613
+    volumes:
+      - spring-cloud-stream-rabbitmq_broker-data
+volumes:
+  spring-cloud-stream-rabbitmq_broker-data:

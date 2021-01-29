@@ -14,6 +14,8 @@
 	<name>ecommerce</name>
 	<description>An ecommerce that receive orders</description>
 	<properties>
+		<spring-boot.build-image.imageName>ruudg/${project.artifactId}:${project.version}</spring-boot.build-image.imageName>
+		
 		<java.version>11</java.version>
 		<spring-cloud.version>2020.0.0</spring-cloud.version>
 	</properties>
