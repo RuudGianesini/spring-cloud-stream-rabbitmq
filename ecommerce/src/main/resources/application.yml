@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        order-to-bill:
+          destination: order-to-bill
+          group: orders

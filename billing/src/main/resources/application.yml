@@ -1,4 +1,6 @@
 spring.cloud.stream:
-#  function.definition: supplier;receive1;receive2;
+  function.definition: orderToBill
   bindings:
-    orderToBill-in-0.destination: order-to-bill
+    orderToBill-in-0:
+      destination: order-to-bill
+      group: orders
